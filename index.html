@@ -1,0 +1,3266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ghulam Mustafa — Full-Stack Web Developer & Digital Product Builder</title>
+<meta name="description" content="Full-stack web developer specializing in WordPress, Laravel, Vue.js, AI integrations, SaaS products, and e-commerce platforms. 9+ years experience across 20+ industries."/>
+<meta name="keywords" content="WordPress developer, Laravel developer, Vue.js, AI integration, SaaS, WooCommerce, full-stack developer portfolio"/>
+<meta property="og:title" content="Ghulam Mustafa — Full-Stack Web Developer & Digital Product Builder"/>
+<meta property="og:description" content="I build high-performance WordPress ecosystems, Laravel apps, SaaS tools, and AI-integrated digital products that drive real business results."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #1a1a24;
+  --bg4: #22222f;
+  --surface: #1e1e2a;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #f0eff8;
+  --text2: #9998b3;
+  --text3: #5c5b78;
+  --accent: #6c63ff;
+  --accent2: #8b83ff;
+  --accent3: #4940d4;
+  --green: #22c97a;
+  --amber: #f5a623;
+  --coral: #ff6b6b;
+  --teal: #38d9c0;
+  --radius: 12px;
+  --radius2: 20px;
+  --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NOISE TEXTURE OVERLAY ─────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── SCROLLBAR ──────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+
+/* ─── TYPOGRAPHY ─────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+}
+
+/* ─── GRID & LAYOUT ──────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s var(--transition);
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--accent2) !important;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ─── HERO ────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108,99,255,0.12) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.hero-glow2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56,217,192,0.06) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(108,99,255,0.12);
+  border: 1px solid rgba(108,99,255,0.25);
+  color: var(--accent2);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: var(--text2);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.25s var(--transition);
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(108,99,255,0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: 1px solid var(--border2);
+  transition: all 0.25s var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--surface);
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat-item strong {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.stat-item span {
+  font-size: 0.85rem;
+  color: var(--text3);
+}
+
+/* ─── HERO VISUAL ────────────────────────────── */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-orbit {
+  width: 420px;
+  height: 420px;
+  position: relative;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.orbit-ring-1 {
+  width: 280px;
+  height: 280px;
+  top: 70px;
+  left: 70px;
+  animation: rotate 25s linear infinite;
+}
+
+.orbit-ring-2 {
+  width: 380px;
+  height: 380px;
+  top: 20px;
+  left: 20px;
+  animation: rotate 40s linear infinite reverse;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 5;
+}
+
+.orbit-center span {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text2);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.orbit-center .big-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent2);
+  line-height: 1;
+}
+
+.tech-tag {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text2);
+  white-space: nowrap;
+  transition: all 0.3s;
+  z-index: 10;
+  cursor: default;
+}
+
+.tech-tag:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.tt-wp  { top: 18%;  left: -8%;  }
+.tt-woo { top: 2%;   left: 52%;  }
+.tt-el  { top: 60%;  left: -6%;  }
+.tt-php { top: 75%;  left: 48%;  }
+.tt-js  { top: 35%;  left: 88%;  }
+.tt-css { top: 80%;  left: 22%;  }
+
+/* ─── SECTION HEADERS ────────────────────────── */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text2);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ─── ABOUT ──────────────────────────────────── */
+#about {
+  padding: 8rem 0;
+  background: var(--bg2);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text2);
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-text p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 1.5rem;
+}
+
+.about-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1rem;
+}
+
+.expertise-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  background: var(--bg4);
+  color: var(--text2);
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  background: rgba(108,99,255,0.15);
+  color: var(--accent2);
+  border-color: rgba(108,99,255,0.3);
+}
+
+.chip.green { background: rgba(34,201,122,0.1); color: var(--green); border-color: rgba(34,201,122,0.2); }
+.chip.amber { background: rgba(245,166,35,0.1); color: var(--amber); border-color: rgba(245,166,35,0.2); }
+.chip.teal  { background: rgba(56,217,192,0.1); color: var(--teal);  border-color: rgba(56,217,192,0.2); }
+.chip.coral { background: rgba(255,107,107,0.1); color: var(--coral); border-color: rgba(255,107,107,0.2); }
+
+.availability-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avail-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.avail-text {
+  font-size: 0.875rem;
+  color: var(--text2);
+}
+
+.avail-text strong { color: var(--text); }
+
+/* ─── SKILLS ─────────────────────────────────── */
+#skills {
+  padding: 8rem 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 2rem;
+  transition: all 0.3s var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skill-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  background: var(--bg3);
+}
+
+.skill-card:hover::before { opacity: 1; }
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.skill-icon.purple { background: rgba(108,99,255,0.15); }
+.skill-icon.green  { background: rgba(34,201,122,0.15); }
+.skill-icon.amber  { background: rgba(245,166,35,0.15); }
+.skill-icon.teal   { background: rgba(56,217,192,0.15); }
+.skill-icon.coral  { background: rgba(255,107,107,0.15); }
+.skill-icon.blue   { background: rgba(56,132,217,0.15); }
+
+.skill-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  font-size: 0.875rem;
+  color: var(--text3);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text3);
+  background: var(--bg4);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* ─── PROJECTS ────────────────────────────────── */
+#projects {
+  padding: 8rem 0;
+  background: var(--bg2);
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text3);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  overflow: hidden;
+  transition: all 0.35s var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border2);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+
+.project-card.featured {
+  grid-column: span 2;
+  flex-direction: row;
+}
+
+.project-thumb {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-card.featured .project-thumb {
+  width: 45%;
+  height: auto;
+}
+
+.project-thumb-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  transition: transform 0.5s var(--transition);
+}
+
+.project-card:hover .project-thumb-bg {
+  transform: scale(1.05);
+}
+
+.bg-toolkit { background: linear-gradient(135deg, #1a1033 0%, #2d1b69 50%, #1a0f3d 100%); color: rgba(108,99,255,0.5); }
+.bg-foxy    { background: linear-gradient(135deg, #0d2137 0%, #1a4a6e 50%, #0d2137 100%); color: rgba(56,132,217,0.5); }
+.bg-banoon  { background: linear-gradient(135deg, #1a0a20 0%, #4a1a6e 50%, #1a0a20 100%); color: rgba(180,90,255,0.5); }
+.bg-ecom    { background: linear-gradient(135deg, #0d2a1a 0%, #1a6e3d 50%, #0d2a1a 100%); color: rgba(34,201,122,0.5); }
+.bg-saas    { background: linear-gradient(135deg, #2a1a0d 0%, #6e3d1a 50%, #2a1a0d 100%); color: rgba(245,166,35,0.5); }
+.bg-lms     { background: linear-gradient(135deg, #1a0d0d 0%, #6e1a1a 50%, #1a0d0d 100%); color: rgba(255,107,107,0.5); }
+
+.project-content {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent2);
+  background: rgba(108,99,255,0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(108,99,255,0.2);
+}
+
+.project-year {
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+.project-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.project-card.featured .project-content h3 {
+  font-size: 1.6rem;
+}
+
+.project-content p {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.stack-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text3);
+  background: var(--bg4);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-metrics {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.metric {
+  text-align: left;
+}
+
+.metric strong {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.metric span {
+  font-size: 0.72rem;
+  color: var(--text3);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent2);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.project-link:hover {
+  color: var(--text);
+  gap: 0.65rem;
+}
+
+/* ─── SERVICES ────────────────────────────────── */
+#services {
+  padding: 8rem 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 2.25rem;
+  transition: all 0.3s var(--transition);
+  position: relative;
+}
+
+.service-card:hover {
+  border-color: rgba(108,99,255,0.3);
+  transform: translateY(-4px);
+}
+
+.service-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-features li {
+  font-size: 0.85rem;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-features li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── TESTIMONIALS ───────────────────────────── */
+#testimonials {
+  padding: 8rem 0;
+  background: var(--bg2);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 2rem;
+  transition: all 0.3s var(--transition);
+}
+
+.testimonial-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-3px);
+}
+
+.testimonial-quote {
+  font-size: 2rem;
+  color: var(--accent);
+  font-family: 'Syne', sans-serif;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-size: 0.925rem;
+  color: var(--text2);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.av-purple { background: rgba(108,99,255,0.2); color: var(--accent2); }
+.av-green  { background: rgba(34,201,122,0.2); color: var(--green); }
+.av-amber  { background: rgba(245,166,35,0.2); color: var(--amber); }
+.av-teal   { background: rgba(56,217,192,0.2); color: var(--teal); }
+.av-coral  { background: rgba(255,107,107,0.2); color: var(--coral); }
+
+.author-info strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.author-info span {
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.star {
+  color: var(--amber);
+  font-size: 0.85rem;
+}
+
+/* ─── EXPERIENCE ─────────────────────────────── */
+#experience {
+  padding: 8rem 0;
+}
+
+.exp-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+
+.exp-sidebar {
+  position: sticky;
+  top: 6rem;
+}
+
+.exp-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.exp-nav li {
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.exp-nav li:hover,
+.exp-nav li.active {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.exp-nav li.active {
+  border-color: rgba(108,99,255,0.25);
+}
+
+.exp-company {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text2);
+  display: block;
+}
+
+.exp-nav li.active .exp-company { color: var(--accent2); }
+
+.exp-role-small {
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+.exp-detail {
+  display: none;
+}
+
+.exp-detail.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-company-name {
+  color: var(--accent2);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.exp-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+
+.exp-type {
+  font-size: 0.78rem;
+  color: var(--text3);
+  background: var(--bg4);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.exp-bullets li {
+  font-size: 0.925rem;
+  color: var(--text2);
+  line-height: 1.65;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  top: 0.15rem;
+}
+
+/* ─── CTA BANNER ─────────────────────────────── */
+#cta {
+  padding: 6rem 0;
+  background: var(--bg2);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, rgba(108,99,255,0.12) 0%, rgba(56,217,192,0.06) 100%);
+  border: 1px solid rgba(108,99,255,0.2);
+  border-radius: 28px;
+  padding: 5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(108,99,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-box h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+  color: var(--text2);
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── CONTACT ────────────────────────────────── */
+#contact {
+  padding: 8rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contact-item h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.contact-item p, .contact-item a {
+  font-size: 0.95rem;
+  color: var(--text2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover { color: var(--accent2); }
+
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 2.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full { grid-column: span 2; }
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.1rem;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.925rem;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: rgba(108,99,255,0.4);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text3);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group select option {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+.form-submit {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: all 0.25s var(--transition);
+}
+
+.form-submit:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+}
+
+/* ─── FOOTER ──────────────────────────────────── */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--text2); }
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--text3);
+}
+
+/* ─── DIVIDER ─────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* ─── SCROLL REVEAL ──────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── TOOLTIP ────────────────────────────────── */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg4);
+  color: var(--text2);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  border: 1px solid var(--border2);
+}
+
+.tooltip:hover::after { opacity: 1; }
+
+/* ─── MOBILE ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-grid, .about-grid, .exp-layout, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { display: none; }
+  .skills-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { flex-direction: column; }
+  .project-card.featured .project-thumb { width: 100%; height: 200px; }
+  .exp-layout { grid-template-columns: 1fr; }
+  .exp-sidebar { position: static; }
+  .exp-nav { flex-direction: row; flex-wrap: wrap; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-group.full { grid-column: span 1; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10,10,15,0.98);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 99;
+  }
+  .nav-links.open a { font-size: 1.2rem; }
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .cta-box { padding: 3rem 2rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* ─── CASE STUDY MODAL ───────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 24px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  transform: scale(0.95) translateY(20px);
+  transition: transform 0.3s var(--transition);
+  position: relative;
+}
+
+.modal-overlay.open .modal {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg4);
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.modal-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent2);
+  margin-bottom: 0.5rem;
+}
+
+.modal h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.modal-url {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--teal);
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.modal-section {
+  margin-bottom: 1.75rem;
+}
+
+.modal-section h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+}
+
+.modal-section p {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+.modal-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.kpi-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+}
+
+.kpi-box strong {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 0.25rem;
+}
+
+.kpi-box span {
+  font-size: 0.75rem;
+  color: var(--text3);
+}
+
+.modal-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.modal-stack-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  background: var(--bg4);
+  color: var(--text2);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* ─── TOAST ──────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  color: var(--text);
+  font-size: 0.875rem;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s var(--transition);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-icon { color: var(--green); font-size: 1.1rem; }
+
+</style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─────────────────────────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <span class="dot"></span>Ghulam Mustafa
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero" style="animation: fadeIn 0.8s ease both;">
+        <div class="hero-badge">// Available for new projects</div>
+        <h1>
+          I Build Web Products<br/>
+          That <span class="highlight">Actually Work.</span>
+        </h1>
+        <p class="hero-desc">
+          Full-stack web developer specializing in WordPress ecosystems, SaaS tools, and 
+          e-commerce platforms. I turn complex business requirements into clean, fast, scalable 
+          digital products — from plugin architectures to production-grade storefronts.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work →</a>
+          <a href="#contact" class="btn-secondary">Start a Project</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>100+</strong>
+            <span>Live projects</span>
+          </div>
+          <div class="stat-item">
+            <strong>20+</strong>
+            <span>Industries served</span>
+          </div>
+          <div class="stat-item">
+            <strong>9yr</strong>
+            <span>Professional experience</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="tech-orbit">
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+          <div class="orbit-center">
+            <span>PROJECTS</span>
+            <span class="big-num">100+</span>
+            <span>SHIPPED</span>
+          </div>
+          <div class="tech-tag tt-wp tooltip" data-tip="AI-Powered Features">AI Integration</div>
+          <div class="tech-tag tt-woo tooltip" data-tip="Laravel Framework">Laravel</div>
+          <div class="tech-tag tt-el tooltip" data-tip="Vue.js Frontend">Vue.js</div>
+          <div class="tech-tag tt-php tooltip" data-tip="WordPress & Plugins">WordPress</div>
+          <div class="tech-tag tt-js tooltip" data-tip="WooCommerce Stores">WooCommerce</div>
+          <div class="tech-tag tt-css tooltip" data-tip="REST & Third-party APIs">API Integration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── ABOUT ──────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label reveal">// About me</p>
+        <h2 class="section-title reveal">The Developer Behind the Code</h2>
+        <div class="about-text reveal">
+          <p>
+            I'm a full-stack web developer with 9+ years of experience and deep expertise across the <strong>WordPress ecosystem</strong>, <strong>Laravel</strong>, and <strong>Vue.js</strong> — building everything from performance-critical plugins to enterprise-grade SaaS applications. My work spans AI-integrated platforms, multilingual storefronts, LMS systems, and high-converting e-commerce experiences across the US, Europe, and the Arab world.
+          </p>
+          <p>
+            My edge is <strong>product thinking</strong>. I don't just implement features — I architect solutions. Whether that's a <strong>Laravel-powered SaaS platform</strong> with API integrations, an <strong>AI-enhanced WordPress plugin</strong>, or a WooCommerce store engineered for conversion, every project is built with Core Web Vitals, scalability, and commercial outcomes baked in from day one.
+          </p>
+          <p>
+            I've built a <strong>WordPress performance plugin</strong> recommended by Elementor itself, contributed to a PDF SaaS platform serving hundreds of thousands of users globally, and delivered polished client sites across e-commerce, legal, healthcare, education, automotive, gaming, and local services — in English, Arabic, German, and Hebrew.
+          </p>
+          <p>
+            If you need someone who can own a project end-to-end — from <strong>AI integration</strong> and <strong>SaaS development</strong> to WordPress ecosystems and production-grade storefronts — that's precisely what I do.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-sidebar reveal">
+        <div class="about-card">
+          <h4>Core Expertise</h4>
+          <div class="expertise-chips">
+            <span class="chip coral">AI Integration</span>
+            <span class="chip coral">Laravel</span>
+            <span class="chip coral">Vue.js</span>
+            <span class="chip coral">API Integration</span>
+            <span class="chip coral">SaaS Development</span>
+            <span class="chip green">WordPress</span>
+            <span class="chip green">WooCommerce</span>
+            <span class="chip teal">Elementor</span>
+            <span class="chip teal">PHP</span>
+            <span class="chip amber">JavaScript</span>
+            <span class="chip amber">CSS / SCSS</span>
+            <span class="chip">Performance</span>
+            <span class="chip">Core Web Vitals</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Git</span>
+            <span class="chip">Cloudflare</span>
+            <span class="chip">WP-CLI</span>
+            <span class="chip">Hostinger</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h4>Industries Served</h4>
+          <div class="expertise-chips">
+            <span class="chip">E-commerce</span>
+            <span class="chip">SaaS / Tools</span>
+            <span class="chip">Education / LMS</span>
+            <span class="chip">Legal Services</span>
+            <span class="chip">Healthcare</span>
+            <span class="chip">Local Business</span>
+            <span class="chip">Manufacturing</span>
+            <span class="chip">Translation</span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h4>Availability</h4>
+          <div class="availability-row">
+            <div class="avail-dot"></div>
+            <p class="avail-text"><strong>Open to new projects</strong> — freelance & contract engagements. Response within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label reveal">// Technical capabilities</p>
+    <h2 class="section-title reveal">What I Bring to the Table</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <div class="skill-icon purple">🔌</div>
+        <h3>WordPress Plugin Development</h3>
+        <p>Custom plugins from scratch — settings APIs, admin UIs, REST endpoints, hooks architecture. Fully compatible with major page builders.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">PHP 8</span>
+          <span class="skill-tag">WP Hooks</span>
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">REST API</span>
+          <span class="skill-tag">Settings API</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon green">🛒</div>
+        <h3>E-commerce Development</h3>
+        <p>WooCommerce stores built for conversion — custom product types, checkout flows, payment gateway integration, print-on-demand pipelines.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">WooCommerce</span>
+          <span class="skill-tag">WC Hooks</span>
+          <span class="skill-tag">Payment APIs</span>
+          <span class="skill-tag">Custom Products</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon amber">⚡</div>
+        <h3>Performance Optimization</h3>
+        <p>Core Web Vitals specialist. Script management, lazy rendering, CDN integration, CLS/LCP/FID fixes, Lighthouse auditing and optimization.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Core Web Vitals</span>
+          <span class="skill-tag">Lighthouse</span>
+          <span class="skill-tag">CDN</span>
+          <span class="skill-tag">JS Deferral</span>
+          <span class="skill-tag">Cloudflare</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon teal">🌐</div>
+        <h3>Multilingual & RTL Development</h3>
+        <p>Fully localized platforms supporting Arabic (RTL), German, English, and 120+ language translation workflows. WPML and custom i18n.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">WPML</span>
+          <span class="skill-tag">RTL CSS</span>
+          <span class="skill-tag">i18n</span>
+          <span class="skill-tag">Polylang</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon coral">🎨</div>
+        <h3>Page Builder Mastery</h3>
+        <p>Elementor expert — custom widgets, dynamic data integration, performance-tuned templates, and add-on development for production sites.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Elementor</span>
+          <span class="skill-tag">Custom Widgets</span>
+          <span class="skill-tag">Dynamic Tags</span>
+          <span class="skill-tag">Template Kits</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-icon blue">📦</div>
+        <h3>SaaS & Web App Architecture</h3>
+        <p>Subscription systems, user authentication, PDF processing pipelines, database schema design, and admin dashboards for scalable products.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">OAuth</span>
+          <span class="skill-tag">Subscription Logic</span>
+          <span class="skill-tag">API Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ───────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <p class="section-label reveal">// Selected work</p>
+        <h2 class="section-title reveal">Projects That Shipped</h2>
+      </div>
+      <div class="filter-tabs reveal">
+        <button class="filter-tab active" onclick="filterProjects('all', this)">All</button>
+        <button class="filter-tab" onclick="filterProjects('plugin', this)">Plugin/SaaS</button>
+        <button class="filter-tab" onclick="filterProjects('ecom', this)">E-commerce</button>
+        <button class="filter-tab" onclick="filterProjects('site', this)">Web Design</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- FEATURED: ToolKit -->
+      <div class="project-card featured reveal" data-cat="plugin" onclick="openModal('toolkit')">
+        <div class="project-thumb">
+          <div class="project-thumb-bg bg-toolkit">TK</div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-cat">Featured · WordPress Plugin</span>
+            <span class="project-year">2020–Present</span>
+          </div>
+          <h3>ToolKit for Elementor</h3>
+          <p>
+            A commercial WordPress plugin — the only performance solution designed exclusively for Elementor.
+            Built 20+ performance tweaks (LCP, CLS, FID), script management tools, site admin utilities, 
+            and a live chat support system. Recommended by Elementor on their official add-ons list.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">PHP 8</span>
+            <span class="stack-tag">WordPress API</span>
+            <span class="stack-tag">Elementor SDK</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">CSS3</span>
+            <span class="stack-tag">Freemius</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-metrics">
+              <div class="metric">
+                <strong>20+</strong>
+                <span>Performance features</span>
+              </div>
+              <div class="metric">
+                <strong>Official</strong>
+                <span>Elementor recommended</span>
+              </div>
+            </div>
+            <a href="https://toolkitforelementor.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FoxyUtils -->
+      <div class="project-card reveal" data-cat="plugin" onclick="openModal('foxy')">
+        <div class="project-thumb">
+          <div class="project-thumb-bg bg-foxy">FU</div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-cat">SaaS · PDF Tools</span>
+            <span class="project-year">2008–Present</span>
+          </div>
+          <h3>FoxyUtils — PDF SaaS Platform</h3>
+          <p>
+            Long-running SaaS platform with 15+ PDF tools: merge, split, convert, protect, compress. 
+            Multilingual (WPML), subscription tiers, tree-planting CSR initiative. Built for scale 
+            and high traffic volume.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">WordPress</span>
+            <span class="stack-tag">WPML</span>
+            <span class="stack-tag">Custom PDF Library</span>
+            <span class="stack-tag">GTM</span>
+            <span class="stack-tag">Subscriptions</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-metrics">
+              <div class="metric">
+                <strong>15+</strong>
+                <span>PDF tools</span>
+              </div>
+            </div>
+            <a href="https://foxyutils.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banoon -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('banoon')">
+        <div class="project-thumb">
+          <div class="project-thumb-bg bg-banoon">BN</div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-cat">E-commerce · Bilingual</span>
+            <span class="project-year">2022</span>
+          </div>
+          <h3>Banoon — Arabic/English E-commerce</h3>
+          <p>
+            20+ category children's e-commerce platform with full Arabic RTL and English support. 
+            Custom cart, wishlist, checkout flow, GTM integration, and category management. 
+            Designed for the MENA market.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">Custom PHP</span>
+            <span class="stack-tag">RTL CSS</span>
+            <span class="stack-tag">GTM</span>
+            <span class="stack-tag">Cart API</span>
+            <span class="stack-tag">i18n</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-metrics">
+              <div class="metric">
+                <strong>20+</strong>
+                <span>Categories</span>
+              </div>
+            </div>
+            <a href="https://ba-noon.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Perfect Stix + PackRight -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('stix')">
+        <div class="project-thumb">
+          <div class="project-thumb-bg bg-ecom">PS</div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-cat">E-commerce · Print-on-Demand</span>
+            <span class="project-year">2025–2026</span>
+          </div>
+          <h3>Perfect Stix / PrintPerfect / PackRight</h3>
+          <p>
+            Suite of three WooCommerce stores for custom printing, packaging, and food-service supplies. 
+            Free shipping logic, product customization, Slider Revolution hero sections, and optimized 
+            checkout flows for B2B and consumer customers.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">WooCommerce</span>
+            <span class="stack-tag">WordPress</span>
+            <span class="stack-tag">Slider Revolution</span>
+            <span class="stack-tag">Custom CSS</span>
+            <span class="stack-tag">GTM</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-metrics">
+              <div class="metric">
+                <strong>3</strong>
+                <span>Live stores</span>
+              </div>
+            </div>
+            <a href="https://perfectstix.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GD Workshop -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('gd')">
+        <div class="project-thumb">
+          <div class="project-thumb-bg bg-lms">GD</div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-cat">LMS · Arabic Platform</span>
+            <span class="project-year">2021</span>
+          </div>
+          <h3>GD Workshop — Arabic Design LMS</h3>
+          <p>
+            Arabic-language learning management system for graphic design, video editing, motion graphics, 
+            and 3D training. Full RTL, user authentication, course management, and instructor profiles.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">CodeIgniter</span>
+            <span class="stack-tag">RTL CSS</span>
+            <span class="stack-tag">Auth System</span>
+            <span class="stack-tag">Course CMS</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://gd-workshop.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bylyngo -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('bylyngo')">
+        <div class="project-thumb">
+          <div class="project-thumb-bg bg-saas">BY</div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-cat">Services · Translation</span>
+            <span class="project-year">2023</span>
+          </div>
+          <h3>Bylyngo — Translation Services</h3>
+          <p>
+            Professional translation and interpretation services platform supporting 120+ languages. 
+            NitroPack performance optimization, legal content architecture, multi-service layout, 
+            and lead generation funnel.
+          </p>
+          <div class="project-stack">
+            <span class="stack-tag">WordPress</span>
+            <span class="stack-tag">NitroPack</span>
+            <span class="stack-tag">Elementor</span>
+            <span class="stack-tag">SEO</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://bylyngo.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aiutanda -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('aiutanda')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-lms">AI</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Healthcare · Germany</span><span class="project-year">2024</span></div>
+          <h3>Aiutanda — Homecare & Health Services</h3>
+          <p>Nationwide German homecare and therapy management platform. WPML multilingual, GDPR-compliant, serving patients and healthcare professionals across Germany.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WPML</span><span class="stack-tag">GDPR</span><span class="stack-tag">Custom Theme</span></div>
+          <div class="project-footer"><a href="https://aiutanda.de" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Münchner Solarkraftwerke -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('solar')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-saas">MS</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Energy · Lead Gen</span><span class="project-year">2023</span></div>
+          <h3>Münchner Solarkraftwerke — Solar Energy</h3>
+          <p>Munich-based solar leasing lead generation site for landowners. Anchor-nav single page with project flow, references, FAQ, and GDPR-compliant contact forms.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Custom Theme</span><span class="stack-tag">German SEO</span><span class="stack-tag">GDPR</span></div>
+          <div class="project-footer"><a href="https://muenchner-solarkraftwerke.de" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- FG Konstruktion -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('fgk')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-ecom">FG</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Engineering · B2B</span><span class="project-year">2023</span></div>
+          <h3>FG Konstruktion — Photovoltaic Engineering</h3>
+          <p>Turnkey PV solutions firm — planning, construction, operation, and financing. B2B corporate site with project references and German SEO targeting commercial solar buyers.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Custom Theme</span><span class="stack-tag">B2B Design</span><span class="stack-tag">Lead Gen</span></div>
+          <div class="project-footer"><a href="https://fg-konstruktion.de" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- LSG Group -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('lsg')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-toolkit">LG</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Enterprise · Corporate</span><span class="project-year">2023</span></div>
+          <h3>LSG Group — Airline Catering & Retail</h3>
+          <p>Global airline catering enterprise platform. Multi-division architecture covering LSG Sky Chefs, sustainability, careers, and global partnerships with GTM analytics.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">GTM</span><span class="stack-tag">Custom Theme</span><span class="stack-tag">Enterprise CMS</span></div>
+          <div class="project-footer"><a href="http://lsg-group.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Evertaste -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('evertaste')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-foxy">EV</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Corporate · Food & Beverage</span><span class="project-year">2022</span></div>
+          <h3>Evertaste — Food & Beverage B2B</h3>
+          <p>Corporate B2B platform for a global travel retail and packaged food specialist. Product portfolio presentation for airline and retail chain buyers worldwide.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WPBakery</span><span class="stack-tag">Custom CSS</span><span class="stack-tag">B2B Design</span></div>
+          <div class="project-footer"><a href="https://evertaste.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- JDM Buy Sell -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('jdm')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-banoon">JB</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Marketplace · Automotive</span><span class="project-year">2020</span></div>
+          <h3>JDM Buy Sell — Global Car Marketplace</h3>
+          <p>Global JDM vehicle marketplace connecting buyers with 82+ importers and dealers worldwide. Covers Toyota, Nissan, Honda, Mazda, Subaru, and more — with WP Rocket performance.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WP Rocket</span><span class="stack-tag">Marketplace</span><span class="stack-tag">SEO</span></div>
+          <div class="project-footer"><a href="https://jdmbuysell.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Games Gravity -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('games')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-lms">GG</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">E-commerce · Gaming (Bahrain)</span><span class="project-year">2025</span></div>
+          <h3>Games Gravity — Gaming PC Store</h3>
+          <p>Premier gaming PC store for Bahrain and the GCC. Custom builds, hardware, and accessories with WPML Arabic/English multilingual support and e-commerce catalogue.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">WPML</span><span class="stack-tag">Arabic RTL</span></div>
+          <div class="project-footer"><a href="https://gamesgravity.net" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Mami Dance Festival -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('mami')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-saas">MD</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Events · Israel</span><span class="project-year">2025</span></div>
+          <h3>Mami Dance Festival</h3>
+          <p>Hebrew RTL dance festival event and booking platform. GTM and Facebook Pixel integrated for event marketing. Elementor-built with ticket booking and social sharing.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Elementor</span><span class="stack-tag">GTM</span><span class="stack-tag">Hebrew RTL</span></div>
+          <div class="project-footer"><a href="https://mamidancefestival.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- UniqueRome -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('uniquerome')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-toolkit">UR</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Travel · Hebrew RTL</span><span class="project-year">2023</span></div>
+          <h3>UniqueRome — Israeli Tours in Rome</h3>
+          <p>Hebrew-language tourism platform for Israeli-guided tours in Rome — culinary, cultural, and historical. Full RTL, Elementor-built, WhatsApp integration, WebP optimised.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Elementor</span><span class="stack-tag">Hebrew RTL</span><span class="stack-tag">WhatsApp</span></div>
+          <div class="project-footer"><a href="https://uniquerome.co.il" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- MT Law -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('mtlaw')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-foxy">MT</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Legal · High-Traffic</span><span class="project-year">2021</span></div>
+          <h3>MT Law — Markman Tomashin (Israel)</h3>
+          <p>One of Israel's largest private client law firm websites. Hebrew RTL, WP Rocket performance optimisation, multi-practice service architecture, and Facebook integration.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WP Rocket</span><span class="stack-tag">Hebrew RTL</span><span class="stack-tag">Legal Design</span></div>
+          <div class="project-footer"><a href="https://mt-law.co.il" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Chabad Rome -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('chabad')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-ecom">CR</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Non-Profit · Community</span><span class="project-year">2020</span></div>
+          <h3>Chabad Rome — Jewish Community Platform</h3>
+          <p>Community and events platform for Chabad Lubavitch Rome. Event ticketing, donation processing, tourist services, and news — WooCommerce integrated, Elementor-built.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Elementor</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">Donations</span></div>
+          <div class="project-footer"><a href="https://chabadpbrome.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Pack Right Now -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('packright')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-banoon">PR</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">E-commerce · Packaging</span><span class="project-year">2026</span></div>
+          <h3>Pack Right Now — Packing Supplies</h3>
+          <p>US-based packing and moving supplies store. Elementor-built WooCommerce store with GTM, Hostinger hosting, mission-driven brand for movers, shippers, and storage customers.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Elementor</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">GTM</span></div>
+          <div class="project-footer"><a href="https://packrightnow.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Print Perfect Shop -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('printperfect')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-toolkit">PP</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">E-commerce · Custom Print</span><span class="project-year">2026</span></div>
+          <h3>Print Perfect Shop — Custom Printed Cups</h3>
+          <p>WooCommerce store for custom-printed disposable cups — foam, frost flex, PET, stadium. Slider Revolution hero, free shipping, promotional pricing, B2B and event buyers.</p>
+          <div class="project-stack"><span class="stack-tag">WooCommerce</span><span class="stack-tag">Slider Revolution</span><span class="stack-tag">Custom CSS</span><span class="stack-tag">PHP</span></div>
+          <div class="project-footer"><a href="https://printperfectshop.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- High Tide Kayak -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('hightide')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-foxy">HT</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">E-commerce · Outdoor Rentals</span><span class="project-year">2026</span></div>
+          <h3>High Tide Kayak Rentals</h3>
+          <p>Vero Beach, FL kayak rental booking platform. WooCommerce store for single, tandem, pedal, and fishing kayaks with online booking, Slider Revolution, and Maps integration.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">Slider Revolution</span><span class="stack-tag">Google Maps</span></div>
+          <div class="project-footer"><a href="https://hightidekayakrentals.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Arrowmid -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('arrowmid')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-lms">AM</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">B2B Tech · Israel</span><span class="project-year">2023</span></div>
+          <h3>Arrowmid — Communication Solutions</h3>
+          <p>Israeli B2B provider of walkie-talkies and enterprise communication systems. WPML Hebrew/English, custom theme, targeting security and military clients in Israel and globally.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WPML</span><span class="stack-tag">Hebrew RTL</span><span class="stack-tag">B2B Design</span></div>
+          <div class="project-footer"><a href="https://arrowmid.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Futuristic Christ -->
+      <div class="project-card reveal" data-cat="plugin" onclick="openModal('futurist')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-saas">FC</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Web3 · NFT & Digital Art</span><span class="project-year">2023</span></div>
+          <h3>Futuristic Christ — Web3 Art Project</h3>
+          <p>Web3 and NFT digital art project exploring theological concepts through AI-generated imagery and blockchain technology. Custom WordPress theme with immersive dark aesthetic.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Web3</span><span class="stack-tag">Custom Theme</span><span class="stack-tag">NFT Platform</span></div>
+          <div class="project-footer"><a href="https://futuristichrist.thearchitect.global" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- BeAhava -->
+      <div class="project-card reveal" data-cat="plugin" onclick="openModal('beahava')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-ecom">BA</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Education · Wellness · Israel</span><span class="project-year">2018</span></div>
+          <h3>BeAhava — Spiritual Awareness Centre</h3>
+          <p>Long-running Hebrew meditation and mysticism education platform. Free guided audio library, online courses, personal coaching, and digital content delivery via DLM plugin.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Hebrew RTL</span><span class="stack-tag">DLM</span><span class="stack-tag">Membership</span></div>
+          <div class="project-footer"><a href="https://beahava.co.il" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- TRA Training -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('tra')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-lms">TR</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Local Services · Training</span><span class="project-year">2023</span></div>
+          <h3>TRA Training — Trained Ready Armed</h3>
+          <p>Illinois firearms training and CCL certification site. WP Rocket optimised, WooCommerce gun store, class scheduling, and local SEO targeting Illinois concealed carry searches.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WP Rocket</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">Local SEO</span></div>
+          <div class="project-footer"><a href="https://tra-training.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- ProveLocal -->
+      <div class="project-card reveal" data-cat="plugin" onclick="openModal('provelocal')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-toolkit">PL</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">SaaS · Travel Membership</span><span class="project-year">2021</span></div>
+          <h3>ProveLocal — Travel Membership OTA</h3>
+          <p>Membership-based OTA for local residents — exclusive hotel, resort, spa, and restaurant discounts unavailable to tourists. Launching in San Francisco and Honolulu markets.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Elementor</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">Membership</span></div>
+          <div class="project-footer"><a href="http://provelocal.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Bloomwoodstock -->
+      <div class="project-card reveal" data-cat="site" onclick="openModal('bloom')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-saas">BW</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">Events · Local Business</span><span class="project-year">2017</span></div>
+          <h3>Bloomwoodstock — Floral Event Studio</h3>
+          <p>Social floral arranging studio for individuals, couples, and groups. Event calendar, booking flow, photo gallery, and private event enquiry — no experience required.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Event Calendar</span><span class="stack-tag">Booking System</span><span class="stack-tag">PHP</span></div>
+          <div class="project-footer"><a href="http://bloomwoodstock.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- Artique Putnam -->
+      <div class="project-card reveal" data-cat="ecom" onclick="openModal('artique')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-banoon">AP</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">E-commerce · Art Gallery</span><span class="project-year">2020</span></div>
+          <h3>Artique Putnam — Local Art Gallery</h3>
+          <p>Online gallery and e-commerce store for original paintings, blown glass, ceramics, and jewellery. Artist profiles, consignment info, WooCommerce catalogue, and local SEO.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">WooCommerce</span><span class="stack-tag">Gallery Layout</span><span class="stack-tag">Local SEO</span></div>
+          <div class="project-footer"><a href="http://artiqueputnam.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+      <!-- My Remote Balance -->
+      <div class="project-card reveal" data-cat="plugin" onclick="openModal('remotebalance')">
+        <div class="project-thumb"><div class="project-thumb-bg bg-saas">RB</div></div>
+        <div class="project-content">
+          <div class="project-meta"><span class="project-cat">SaaS · HR Wellness Tech</span><span class="project-year">2021</span></div>
+          <h3>My Remote Balance — Wellness Platform</h3>
+          <p>Corporate mental health and wellness platform for remote teams. Psychologist-led service for HR leaders, Calendly booking integration, video background hero, and blog-driven SEO.</p>
+          <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">Calendly</span><span class="stack-tag">Custom Theme</span><span class="stack-tag">SEO</span></div>
+          <div class="project-footer"><a href="https://myremotebalance.com" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Site ↗</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="services">
+  <div class="container">
+    <p class="section-label reveal">// What I offer</p>
+    <h2 class="section-title reveal">Services</h2>
+    <p class="section-desc reveal">End-to-end web development from architecture to launch. No handoff gaps, no communication silos.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-num mono">01 —</div>
+        <h3>WordPress Development</h3>
+        <p>Custom themes, plugins, page builder integration, performance hardening, and security — built to be maintained, not just shipped.</p>
+        <ul class="service-features">
+          <li>Custom plugin development</li>
+          <li>Theme & template customization</li>
+          <li>Elementor integration & widgets</li>
+          <li>Admin UI & Settings pages</li>
+          <li>Plugin architecture review</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-num mono">02 —</div>
+        <h3>E-commerce Engineering</h3>
+        <p>WooCommerce stores engineered for conversion — custom product types, checkout flows, gateway integrations, and B2B pricing logic.</p>
+        <ul class="service-features">
+          <li>WooCommerce store build</li>
+          <li>Custom product configurations</li>
+          <li>Checkout optimization</li>
+          <li>Payment gateway setup</li>
+          <li>Inventory & order systems</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-num mono">03 —</div>
+        <h3>Performance & Core Web Vitals</h3>
+        <p>Lighthouse audits, CLS/LCP/FID diagnosis, script management, CDN configuration, and measurable speed improvements.</p>
+        <ul class="service-features">
+          <li>Lighthouse 90+ target</li>
+          <li>Script deferral & pruning</li>
+          <li>Image optimization pipeline</li>
+          <li>CDN & edge caching setup</li>
+          <li>CLS, LCP, FID fixes</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-num mono">04 —</div>
+        <h3>Multilingual & RTL Platforms</h3>
+        <p>Full Arabic RTL support, WPML/Polylang configuration, translation workflows, and localization for MENA and European markets.</p>
+        <ul class="service-features">
+          <li>Arabic RTL CSS architecture</li>
+          <li>WPML configuration</li>
+          <li>Translation workflow setup</li>
+          <li>Multi-currency support</li>
+          <li>Locale-aware UX</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-num mono">05 —</div>
+        <h3>SaaS & Web App Development</h3>
+        <p>Subscription systems, user dashboards, processing pipelines, and admin tools — architected for scale from day one.</p>
+        <ul class="service-features">
+          <li>Subscription & billing logic</li>
+          <li>User authentication systems</li>
+          <li>API design & integration</li>
+          <li>Admin dashboard builds</li>
+          <li>Database schema design</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-num mono">06 —</div>
+        <h3>Site Audit & Technical Consulting</h3>
+        <p>Deep-dive audits on existing WordPress installs — plugin conflicts, security gaps, performance bottlenecks, and architecture recommendations.</p>
+        <ul class="service-features">
+          <li>Plugin conflict diagnosis</li>
+          <li>Security hardening review</li>
+          <li>Architecture assessment</li>
+          <li>Migration planning</li>
+          <li>Codebase quality review</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ───────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-label reveal">// Client feedback</p>
+    <h2 class="section-title reveal">What Clients Say</h2>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          The ToolKit plugin has become an essential part of every Elementor build I do. 
+          Script Ninja alone saved my sites 2–3 seconds of load time. 
+          Support is genuinely outstanding — fast, knowledgeable, and always helpful.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-purple">JM</div>
+          <div class="author-info">
+            <strong>James M.</strong>
+            <span>WordPress Agency Owner, USA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          Our WooCommerce store needed serious rework before the holiday season. 
+          Delivery was fast, code was clean, and the checkout conversion noticeably improved. 
+          Will be working with this developer long-term.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-green">SR</div>
+          <div class="author-info">
+            <strong>Sarah R.</strong>
+            <span>E-commerce Store Owner, UK</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          Arabic RTL e-commerce is genuinely hard to get right. 
+          This developer understood the nuances immediately — the platform works flawlessly 
+          in both Arabic and English, with a design our customers actually love.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-amber">KA</div>
+          <div class="author-info">
+            <strong>Khalid A.</strong>
+            <span>E-commerce Founder, MENA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          I hired this developer for a speed audit and walked away with a Lighthouse score of 92. 
+          He identified issues our previous developer had missed for months and fixed them cleanly. 
+          Highly recommended.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-teal">ML</div>
+          <div class="author-info">
+            <strong>Marc L.</strong>
+            <span>Digital Marketing Director, Germany</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          Professional, communicative, and technically strong. 
+          Our translation services site was delivered on time, looks great on mobile, 
+          and ranks well for our target keywords. Excellent all around.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-coral">LP</div>
+          <div class="author-info">
+            <strong>Laura P.</strong>
+            <span>CEO, Bylyngo Interpreting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          We needed three related stores built quickly without sacrificing quality. 
+          Got exactly that. The print-on-demand pipeline works seamlessly and 
+          the product pages convert better than our old setup.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar av-purple">DW</div>
+          <div class="author-info">
+            <strong>David W.</strong>
+            <span>Operations Manager, Perfect Stix</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────────── -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label reveal">// Career history</p>
+    <h2 class="section-title reveal">Experience</h2>
+
+    <div class="exp-layout">
+      <div class="exp-sidebar reveal">
+        <ul class="exp-nav" id="expNav">
+          <li class="active" onclick="switchExp(0, this)">
+            <span class="exp-company">Independent</span>
+            <span class="exp-role-small">Freelance Developer</span>
+          </li>
+          <li onclick="switchExp(1, this)">
+            <span class="exp-company">FoxyUtils</span>
+            <span class="exp-role-small">Full-Stack Developer</span>
+          </li>
+          <li onclick="switchExp(2, this)">
+            <span class="exp-company">ToolKit</span>
+            <span class="exp-role-small">Product Developer</span>
+          </li>
+          <li onclick="switchExp(3, this)">
+            <span class="exp-company">Agencies/Clients</span>
+            <span class="exp-role-small">Contract Work</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="exp-detail active reveal" id="exp-0">
+          <div class="exp-header">
+            <h3 class="exp-title">Senior Freelance Web Developer</h3>
+            <div class="exp-meta">
+              <span class="exp-company-name">Independent Practice</span>
+              <span class="exp-period">2020 — Present</span>
+              <span class="exp-type">Freelance</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Delivered 15+ production websites across 8 industries including e-commerce, SaaS, education, translation, and local services.</li>
+            <li>Specialized in WordPress ecosystem — custom plugins, WooCommerce engineering, Elementor optimization, and multilingual/RTL architectures.</li>
+            <li>Built and maintained commercial plugin (ToolKit for Elementor) recommended by Elementor on their official add-ons directory.</li>
+            <li>Served clients across the USA, Germany, UK, and the Arab world — successfully navigating English, Arabic, and German market requirements.</li>
+            <li>Consistently targeted Lighthouse scores above 85 on all delivered projects.</li>
+          </ul>
+        </div>
+
+        <div class="exp-detail" id="exp-1">
+          <div class="exp-header">
+            <h3 class="exp-title">Full-Stack Web Developer</h3>
+            <div class="exp-meta">
+              <span class="exp-company-name">FoxyUtils.com</span>
+              <span class="exp-period">Ongoing engagement</span>
+              <span class="exp-type">Contract</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Contributed to development and maintenance of a PDF SaaS platform serving a large global user base since 2008.</li>
+            <li>Implemented WPML multilingual architecture supporting multiple international markets simultaneously.</li>
+            <li>Worked with custom PHP PDF processing library for 15+ file operation tools (merge, split, convert, protect, compress).</li>
+            <li>Integrated GTM (Google Tag Manager) and analytics infrastructure for conversion tracking.</li>
+            <li>Maintained subscription and user management systems across pricing tiers.</li>
+          </ul>
+        </div>
+
+        <div class="exp-detail" id="exp-2">
+          <div class="exp-header">
+            <h3 class="exp-title">Plugin Product Developer</h3>
+            <div class="exp-meta">
+              <span class="exp-company-name">ToolKit for Elementor</span>
+              <span class="exp-period">2020 — Present</span>
+              <span class="exp-type">Product Owner</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Designed, developed, and launched a commercial WordPress plugin targeting the Elementor performance gap.</li>
+            <li>Built 20+ distinct features covering Core Web Vitals (CLS, LCP, FID), script management, and WP admin tools.</li>
+            <li>Achieved placement on Elementor's official Recommended Add-ons list — a significant trust and discovery milestone.</li>
+            <li>Implemented customer support infrastructure including live chat, email, and ticketing system.</li>
+            <li>Continuously updated plugin alongside Elementor core releases to maintain compatibility and feature parity.</li>
+          </ul>
+        </div>
+
+        <div class="exp-detail" id="exp-3">
+          <div class="exp-header">
+            <h3 class="exp-title">Contract Web Developer</h3>
+            <div class="exp-meta">
+              <span class="exp-company-name">Multiple Agencies & Clients</span>
+              <span class="exp-period">2020 — Present</span>
+              <span class="exp-type">Contract</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Delivered e-commerce platforms for US-based retailers — packrightnow.com (packing supplies), hightidekayakrentals.com (booking-enabled outdoor business), tra-training.com (firearms training).</li>
+            <li>Built service websites for German and Austrian markets including solar energy (muenchner-solarkraftwerke.de), AI services (aiutanda.de), and mechanical engineering firm (fg-konstruktion.de).</li>
+            <li>Developed Arabic/English bilingual platforms serving the MENA market — banoon (e-commerce) and gd-workshop (LMS).</li>
+            <li>Each engagement owned end-to-end: discovery, architecture, development, QA, and launch.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA SECTION ────────────────────────────── -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <p class="section-label" style="justify-content: center; display: flex; margin-bottom: 1rem;">// Let's build something</p>
+      <h2>Ready to Ship Your Next Project?</h2>
+      <p>
+        Whether you need a WordPress plugin, an e-commerce store, a performance overhaul, 
+        or a multilingual platform — I'm ready to own it end-to-end.
+      </p>
+      <div class="cta-actions">
+        <a href="#contact" class="btn-primary">Start a Conversation →</a>
+        <a href="mailto:gm.contriver@gmail.com" class="btn-secondary">Quick Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label reveal">// Get in touch</p>
+    <h2 class="section-title reveal">Let's Work Together</h2>
+    <p class="section-desc reveal">
+      I'm available for freelance projects, long-term contracts, and consulting engagements. 
+      Tell me about your project and I'll respond within 24 hours.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:gm.contriver@gmail.com">gm.contriver@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Remote — serving clients globally</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div>
+            <h4>Response Time</h4>
+            <p>Within 24 hours on business days</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🤝</div>
+          <div>
+            <h4>Open To</h4>
+            <p>Freelance, contract, long-term retainer, consulting</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Jane Smith" id="cName"/>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="jane@company.com" id="cEmail"/>
+          </div>
+          <div class="form-group full">
+            <label>Project Type</label>
+            <select id="cType">
+              <option value="">Select a service...</option>
+              <option>WordPress Plugin Development</option>
+              <option>E-commerce / WooCommerce</option>
+              <option>Performance Optimization</option>
+              <option>Multilingual / RTL Platform</option>
+              <option>SaaS / Web App</option>
+              <option>Site Audit / Consulting</option>
+              <option>Full Website Build</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Budget Range</label>
+            <select id="cBudget">
+              <option value="">Select a budget range...</option>
+              <option>Under $1,000</option>
+              <option>$1,000 – $3,000</option>
+              <option>$3,000 – $7,500</option>
+              <option>$7,500 – $15,000</option>
+              <option>$15,000+</option>
+              <option>Let's discuss</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Project Details</label>
+            <textarea id="cMsg" placeholder="Tell me about your project — goals, timeline, and any technical requirements..."></textarea>
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Ghulam Mustafa <span style="color:var(--accent)">.</span></div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 · Built with precision. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── CASE STUDY MODALS ───────────────────────── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ─── TOAST ─────────────────────────────────── -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toastMsg">Message sent successfully!</span>
+</div>
+
+<script>
+// ── NAV TOGGLE ──
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+
+// ── EXPERIENCE TABS ──
+function switchExp(idx, el) {
+  document.querySelectorAll('.exp-detail').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.exp-nav li').forEach(li => li.classList.remove('active'));
+  document.getElementById('exp-' + idx).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── PROJECT FILTER ──
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(c => {
+    if (cat === 'all' || c.dataset.cat === cat) {
+      c.style.display = '';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+
+// ── MODAL DATA ──
+const modalData = {
+  toolkit: {
+    cat: 'WordPress Plugin · Featured Project',
+    title: 'ToolKit for Elementor',
+    url: 'https://toolkitforelementor.com',
+    summary: 'A commercial WordPress plugin — the only performance solution designed exclusively for the Elementor ecosystem. Built to solve the critical gap between Elementor\'s flexibility and production-level performance requirements.',
+    problem: 'Elementor sites routinely fail Core Web Vitals assessments. Existing performance plugins are built for generic WordPress, not Elementor\'s specific rendering pipeline, causing conflicts and limited effectiveness.',
+    stack: ['PHP 8', 'WordPress Hooks API', 'Elementor SDK', 'Freemius', 'JavaScript ES6+', 'CSS3', 'Live Chat API', 'REST Endpoints'],
+    kpis: [{ v: '20+', l: 'Performance features' }, { v: 'Official', l: 'Elementor recommended' }, { v: '4+', l: 'Years in market' }],
+    details: 'Built 20+ distinct features spanning all three Core Web Vitals: CLS fixes via automatic image dimension injection and FOIT prevention; LCP improvements through font preloading, above-fold image preloading, and CDN edge caching via Cloudflare; FID reduction via CSS/JS minification, script deferral, and lazy HTML rendering. Admin tools include secure login URL changer, WP admin customizer, temporary user access links, database cleaner, Elementor template syncer, and WP core manager.',
+    lessons: 'Building specifically for one platform (Elementor) rather than generically for WordPress created a defensible niche and a clear value proposition that competitors couldn\'t easily replicate.'
+  },
+  foxy: {
+    cat: 'SaaS Platform · PDF Tools',
+    title: 'FoxyUtils — Everything PDF',
+    url: 'https://foxyutils.com',
+    summary: 'Long-running B2C SaaS platform offering 15+ PDF manipulation tools — merge, split, rotate, compress, protect, convert — serving a global user base with free and premium tiers.',
+    problem: 'PDF tools are often either desktop software or clunky web apps. FoxyUtils needed a clean, fast web interface with robust file processing, multilingual support, and a CSR initiative (planting trees per conversion) as a differentiator.',
+    stack: ['WordPress', 'WPML', 'Custom PHP PDF Library', 'GTM', 'Subscription Systems', 'Google Analytics', 'Custom Theme'],
+    kpis: [{ v: '15+', l: 'PDF tool types' }, { v: '18yr', l: 'Platform longevity' }, { v: '120+', l: 'Language support' }],
+    details: 'Implemented WPML for full internationalization, maintained and extended the proprietary PDF processing library, built subscription management, and integrated comprehensive analytics tracking. The tree-planting initiative (one tree per 5,000 conversions) is tracked and displayed to create an environmental trust signal.',
+    lessons: 'Long-running SaaS requires disciplined backward compatibility and upgrade paths. The longevity of FoxyUtils since 2008 demonstrates the value of sustainable, maintainable architecture.'
+  },
+  banoon: {
+    cat: 'E-commerce · Bilingual · MENA Market',
+    title: 'Banoon — Children\'s E-commerce Platform',
+    url: 'https://ba-noon.com',
+    summary: 'Bilingual Arabic/English children\'s e-commerce platform serving the MENA market with 20+ product categories including baby fashion, kids fashion, toys, and books.',
+    problem: 'Arabic e-commerce requires genuine RTL implementation — not CSS flips. Cart behavior, checkout flows, typography, and UX patterns all behave differently in RTL contexts. Most Western e-commerce frameworks don\'t handle this well out of the box.',
+    stack: ['Custom PHP', 'RTL CSS Architecture', 'GTM', 'Cart & Wishlist API', 'i18n Framework', 'Payment Gateway', 'Lazy Loading'],
+    kpis: [{ v: '20+', l: 'Product categories' }, { v: '2', l: 'Languages supported' }, { v: 'RTL', l: 'Native Arabic support' }],
+    details: 'Built a fully custom cart system, wishlist functionality, and checkout flow natively supporting both Arabic (RTL) and English (LTR) layouts. GTM integration for conversion tracking, SVG-based icons for crisp rendering across screen densities, and a mobile-first responsive layout appropriate for MENA device usage patterns.',
+    lessons: 'RTL is not a CSS afterthought. Designing bi-directional layouts from the start — including component spacing, icon mirroring, and flow logic — produces significantly better results than retrofitting RTL onto an LTR design.'
+  },
+  stix: {
+    cat: 'E-commerce Suite · Print & Packaging',
+    title: 'Perfect Stix / PrintPerfect / PackRight Now',
+    url: 'https://perfectstix.com',
+    summary: 'Three related WooCommerce stores serving B2B and consumer markets for custom printed products, food-service supplies, and packing materials. Each store required distinct product catalogs and conversion paths.',
+    problem: 'Building three related stores efficiently without code duplication while maintaining distinct branding, product types, and UX flows for each target audience.',
+    stack: ['WooCommerce', 'WordPress', 'Slider Revolution', 'Custom CSS', 'GTM', 'WP Rocket', 'Elementor', 'Product Customizer'],
+    kpis: [{ v: '3', l: 'Live stores' }, { v: '$199', l: 'Free shipping threshold' }, { v: 'B2B', l: 'Trade customer support' }],
+    details: 'Implemented Slider Revolution hero sections for high-impact visual merchandising, configured free shipping threshold logic, built category hierarchies appropriate for trade and consumer buyers, and optimized product page layouts for conversion. WP Rocket performance configuration applied across all three stores.',
+    lessons: 'Suite deployments benefit from a shared base configuration strategy. Establishing conventions early (hosting, caching, GTM structure) dramatically reduces per-site setup time.'
+  },
+  gd: {
+    cat: 'LMS · Arabic Education Platform',
+    title: 'GD Workshop — Arabic Design Training',
+    url: 'https://gd-workshop.com',
+    summary: 'Arabic-language LMS (Learning Management System) for creative professionals — covering graphic design, video editing, motion graphics, and 3D rendering courses. Targeted at Arab-world design students.',
+    problem: 'Arabic educational platforms are underserved. Most LMS tools are English-first with poor RTL support, making the Arabic learning experience frustrating for students and instructors alike.',
+    stack: ['CodeIgniter', 'PHP', 'RTL CSS', 'MySQL', 'Auth System', 'Course CMS', 'Video Integration', 'Instructor Profiles'],
+    kpis: [{ v: 'Full', l: 'Arabic RTL support' }, { v: '4+', l: 'Subject disciplines' }, { v: 'Custom', l: 'Auth & enrollment' }],
+    details: 'Built on a CodeIgniter PHP framework for a lean, fast LMS core. Implemented user registration, authentication, course enrollment, instructor profile management, and video course delivery. Full RTL CSS architecture ensures the Arabic reading experience is natural and intuitive.',
+    lessons: 'Framework selection matters significantly for LMS performance. CodeIgniter\'s lightweight footprint made it well-suited for a focused, purpose-built educational platform versus a heavy CMS.'
+  },
+  bylyngo: {
+    cat: 'Professional Services · Translation',
+    title: 'Bylyngo Interpreting & Translation',
+    url: 'https://bylyngo.com',
+    summary: 'USA-based professional translation and interpretation services platform supporting 120+ languages. Serves legal, medical, event, and USCIS document translation needs.',
+    problem: 'Translation service websites often look generic and fail to communicate specialization, trust signals, and service differentiation clearly to their target clients.',
+    stack: ['WordPress', 'Elementor', 'NitroPack', 'SEO Schema', 'Lead Generation Forms', 'GTM', 'Custom Layout'],
+    kpis: [{ v: '120+', l: 'Languages supported' }, { v: 'USA', l: 'Owned & operated' }, { v: 'NitroPack', l: 'Performance optimized' }],
+    details: 'Designed a service architecture that clearly communicates Bylyngo\'s multilingual capabilities, certification credentials, and specializations. NitroPack implemented for performance, structured content layout for SEO, and conversion-focused CTAs throughout.',
+    lessons: 'Professional services sites live or die by trust signals. Certification badges, language count displays, and service-specific landing pages create credibility that generic designs cannot.'
+  },
+  aiutanda: {
+    cat: 'Healthcare · Corporate Services · Germany',
+    title: 'Aiutanda — Homecare & Health Services',
+    url: 'https://aiutanda.de',
+    summary: 'Corporate website for aiutanda, a nationwide German provider of ambulatory healthcare, homecare, therapy management, and medical equipment.',
+    problem: 'German healthcare platforms need strict GDPR compliance, accessible design for elderly users, and multilingual support — all while maintaining a human, caring brand voice.',
+    stack: ['WordPress', 'WPML', 'Custom Theme', 'PHP', 'GDPR Compliance', 'German SEO', 'Responsive Design'],
+    kpis: [{ v: 'WPML', l: 'Multilingual support' }, { v: 'GDPR', l: 'Fully compliant' }, { v: '4', l: 'Service divisions' }],
+    details: 'Built with WPML multilingual architecture covering healthcare services, therapy management, homecare, and medical equipment divisions. GDPR-compliant forms, accessible design, and full German-language SEO targeting patient and caregiver audiences across Germany.',
+    lessons: 'Healthcare web design demands a balance between clinical trust signals and emotional warmth — the visual identity and copy must work together to reassure vulnerable users.'
+  },
+  solar: {
+    cat: 'Energy · Lead Generation · Germany',
+    title: 'Münchner Solarkraftwerke — Solar Energy',
+    url: 'https://muenchner-solarkraftwerke.de',
+    summary: 'Lead generation website for a Munich-based company that leases rooftop and land surfaces for photovoltaic solar installations, targeting Bavarian landowners.',
+    problem: 'Solar leasing is a niche concept unfamiliar to most property owners — the site needed to explain the process, build trust, and capture qualified landowner leads in one tight flow.',
+    stack: ['WordPress', 'Custom Theme', 'PHP', 'CSS', 'German SEO', 'GDPR Compliance', 'Lead Generation'],
+    kpis: [{ v: 'Single-page', l: 'Anchor navigation' }, { v: 'GDPR', l: 'Compliant forms' }, { v: 'Bavaria', l: 'Local market SEO' }],
+    details: 'Single-page architecture with anchor navigation covering Über uns, Services, Projektablauf, Referenzen, FAQ, and Kontakt. GDPR-compliant lead capture form, LinkedIn integration for B2B credibility, and German-language SEO targeting Photovoltaik and Dachfläche keywords.',
+    lessons: 'For niche B2B concepts, a clear step-by-step process section dramatically reduces objections and increases qualified lead conversion.'
+  },
+  fgk: {
+    cat: 'Engineering · B2B Services · Germany',
+    title: 'FG Konstruktion GmbH — Photovoltaic Engineering',
+    url: 'https://fg-konstruktion.de',
+    summary: 'B2B corporate website for FG Konstruktion, a German engineering firm offering turnkey photovoltaic system solutions covering planning, construction, operation, and financing.',
+    problem: 'Engineering firms often have excellent technical capability but poor web presence — the site needed to communicate professionalism and full-service capability to commercial solar investors.',
+    stack: ['WordPress', 'Custom Theme', 'PHP', 'CSS', 'B2B Web Design', 'German SEO', 'GDPR Compliance'],
+    kpis: [{ v: 'Turnkey', l: 'PV solutions' }, { v: '4', l: 'Service pillars' }, { v: 'B2B', l: 'Commercial focus' }],
+    details: 'Built with the same custom theme system as Münchner Solarkraftwerke, adapted for an engineering and construction audience. Single-page anchor navigation presenting the four service pillars, project reference portfolio, LinkedIn/Facebook social integration, and B2B lead capture.',
+    lessons: 'A shared design system across related projects in the same niche dramatically reduces development time while maintaining distinct brand identities.'
+  },
+  lsg: {
+    cat: 'Enterprise · Corporate Website',
+    title: 'LSG Group — Airline Catering & Retail',
+    url: 'http://lsg-group.com',
+    summary: 'Enterprise corporate website for LSG Group, a global leader in airline catering connecting food and people worldwide — covering multiple divisions, sustainability, and careers.',
+    problem: 'Enterprise sites with multiple divisions and global audiences require a clear information architecture that serves airline partners, investors, media, and job seekers simultaneously.',
+    stack: ['WordPress', 'GTM', 'Custom Theme', 'Multi-level Navigation', 'Corporate Architecture', 'SEO'],
+    kpis: [{ v: 'Global', l: 'Enterprise platform' }, { v: 'GTM', l: 'Analytics integrated' }, { v: 'Multi-div', l: 'Division architecture' }],
+    details: 'Multi-division architecture covering LSG Group, LSG Sky Chefs, packaged food, and convenience retail. Sections for sustainability, awards, careers, news, and global partnerships. GTM integration for enterprise-level analytics and multi-level navigation supporting deep content hierarchy.',
+    lessons: 'Enterprise sites need a ruthless information hierarchy. Every extra click to reach key content increases bounce rate — top-level navigation decisions directly impact business outcomes.'
+  },
+  evertaste: {
+    cat: 'Corporate · B2B Food Industry',
+    title: 'Evertaste — Food & Beverage B2B Platform',
+    url: 'https://evertaste.com',
+    summary: 'Corporate website for Evertaste, a food and beverage specialist serving travel retail and packaged food industries — connecting with airline, travel hub, and retail chain buyers globally.',
+    problem: 'B2B food industry platforms need to project premium quality and international credibility while making complex product portfolios navigable for busy trade buyers.',
+    stack: ['WordPress', 'WPBakery / Visual Composer', 'Custom CSS', 'PHP', 'B2B Web Design', 'SEO'],
+    kpis: [{ v: 'B2B', l: 'Trade buyer focus' }, { v: 'Global', l: 'International audience' }, { v: 'WPBakery', l: 'Page builder' }],
+    details: 'Built with Visual Composer (WPBakery) for flexible content layout. High-quality food photography integration, multi-section service pages for travel retail and packaged food verticals, and a professional brand identity suitable for airline and retail chain procurement audiences.',
+    lessons: 'In B2B food industry, visual presentation of product quality is as important as the written value proposition — image selection and layout quality directly affects buyer credibility.'
+  },
+  jdm: {
+    cat: 'Marketplace · Automotive E-commerce',
+    title: 'JDM Buy Sell — Global JDM Car Marketplace',
+    url: 'https://jdmbuysell.com',
+    summary: 'Online marketplace connecting JDM car buyers with 82+ importers, exporters, and dealers across the globe — covering Toyota, Nissan, Honda, Mazda, Subaru, Mitsubishi, and more.',
+    problem: 'JDM importers and buyers are globally scattered with no central discovery platform. Building a trusted marketplace requires verified dealer profiles, rich listings, and strong SEO for model-specific searches.',
+    stack: ['WordPress', 'WP Rocket', 'Custom Theme', 'Marketplace Architecture', 'Car Listing System', 'SEO'],
+    kpis: [{ v: '82+', l: 'Global dealers' }, { v: 'WP Rocket', l: 'Performance optimised' }, { v: 'Multi-make', l: 'Car catalogue' }],
+    details: 'Marketplace with make/model browse architecture across all major JDM brands, model-specific listing pages (Supra, Skyline, NSX, RX-7, WRX), Sell Your Car submission flow, WP Rocket performance optimisation, and multi-engine SEO verification (Google, Bing, Yandex).',
+    lessons: 'Marketplace SEO is won at the category and model level, not the homepage. Investing in deep, model-specific page architecture generates compounding organic traffic.'
+  },
+  games: {
+    cat: 'E-commerce · Gaming & Technology · Bahrain',
+    title: 'Games Gravity — Gaming PC Store',
+    url: 'https://gamesgravity.net',
+    summary: 'Premier gaming PC store for Bahrain and the GCC, offering custom PC builds, gaming hardware, peripherals, and accessories with Arabic/English multilingual support.',
+    problem: 'Gaming retail in the Gulf requires bilingual Arabic/English presentation, a product catalogue that rivals international stores, and trust signals for a local audience.',
+    stack: ['WordPress', 'WooCommerce', 'WPML', 'PHP', 'Arabic RTL', 'Custom Theme', 'SEO'],
+    kpis: [{ v: 'WPML', l: 'Arabic + English' }, { v: 'Bahrain', l: 'GCC market' }, { v: 'Custom', l: 'PC builds featured' }],
+    details: 'WooCommerce store with WPML Arabic/English multilingual architecture, custom PC build service pages, product category structure for PCs, parts, peripherals, and accessories, plus Google Site Verification and Gulf region SEO targeting.',
+    lessons: 'In the GCC gaming market, a credible custom build service offering differentiates a store from grey importers and commands higher margins.'
+  },
+  mami: {
+    cat: 'Events & Entertainment · Israel',
+    title: 'Mami Dance Festival',
+    url: 'https://mamidancefestival.com',
+    summary: 'Hebrew-language dance festival event and booking platform for an Israeli dance community. GTM and Facebook Pixel integrated for event marketing and audience retargeting.',
+    problem: 'Israeli event platforms need full Hebrew RTL support, social ad integration for ticket sales, and a mobile-first design for audiences booking on smartphones.',
+    stack: ['WordPress', 'Elementor', 'GTM', 'Facebook Pixel', 'Hebrew RTL', 'Booking Flow'],
+    kpis: [{ v: 'GTM', l: 'Analytics + tracking' }, { v: 'FB Pixel', l: 'Ad retargeting' }, { v: 'Hebrew', l: 'Full RTL support' }],
+    details: 'Elementor-built Hebrew RTL event platform with GTM and Facebook Pixel for full marketing attribution. Event listing and schedule presentation, ticket booking flow, social media integration, and custom SVG logo implementation. Mobile-first responsive layout for Israeli smartphone-dominant audience.',
+    lessons: 'For event marketing, Facebook Pixel + GTM setup from day one is non-negotiable — retargeting audiences who visit but don\'t convert is one of the highest-ROI channels for ticket sales.'
+  },
+  uniquerome: {
+    cat: 'Travel & Tourism · Hebrew RTL',
+    title: 'UniqueRome — Israeli Tours & Transport in Rome',
+    url: 'https://uniquerome.co.il',
+    summary: 'Hebrew-language tourism platform for Israeli-guided tours in Rome — culinary, cultural, and historical experiences — alongside private transportation services.',
+    problem: 'Israeli tourists in Rome need a trusted, Hebrew-language resource that speaks to their culture and can be easily found on Israeli search engines with Hebrew keywords.',
+    stack: ['WordPress', 'Elementor', 'Hebrew RTL', 'PHP', 'WhatsApp Integration', 'WebP Optimisation', 'SEO'],
+    kpis: [{ v: 'Hebrew', l: 'Native RTL' }, { v: 'WhatsApp', l: 'Direct booking' }, { v: 'WebP', l: 'Image optimised' }],
+    details: 'Full Hebrew RTL tourism platform with Elementor 4.x custom breakpoints. Tour catalogue across culinary, cultural, and historical disciplines, Israeli guide credential display, WhatsApp contact integration for direct booking, and WebP image optimisation for fast mobile delivery.',
+    lessons: 'For tourism in a foreign destination, speaking the customer\'s language — literally and culturally — is the single highest-impact conversion factor.'
+  },
+  mtlaw: {
+    cat: 'Legal Services · High-Traffic Corporate · Israel',
+    title: 'MT Law — Markman Tomashin & Co.',
+    url: 'https://mt-law.co.il',
+    summary: 'High-traffic corporate website for one of Israel\'s largest law firms representing private clients across multiple legal disciplines.',
+    problem: 'Large Israeli law firms need a site that projects authority and accessibility simultaneously — serving both clients seeking help and media or professionals researching the firm.',
+    stack: ['WordPress', 'WP Rocket', 'Hebrew RTL', 'PHP', 'Custom Theme', 'Facebook Integration', 'Legal Design'],
+    kpis: [{ v: 'High-traffic', l: 'WP Rocket optimised' }, { v: 'Hebrew', l: 'Full RTL support' }, { v: 'Multi-practice', l: 'Legal architecture' }],
+    details: 'Full Hebrew RTL corporate site with WP Rocket 3.21.3 performance optimisation for high-traffic load. Multi-discipline legal service pages, attorney profile architecture, client rights presentation, Facebook social integration, and structured Hebrew content for Israeli legal services SEO.',
+    lessons: 'For high-traffic legal sites, performance is a legal liability as much as a technical concern — page speed directly affects first impression credibility with clients under stress.'
+  },
+  chabad: {
+    cat: 'Non-Profit · Religious Community Platform',
+    title: 'Chabad Rome (Piazza Bologna)',
+    url: 'https://chabadpbrome.com',
+    summary: 'Community and events platform for Chabad Lubavitch in Rome, serving Jewish tourists, expats, and local community members with events, donations, news, and tourist services.',
+    problem: 'A religious community site needs to simultaneously serve tourists arriving in Rome, local members seeking services, and donors worldwide — each with different needs and urgency.',
+    stack: ['WordPress', 'Elementor', 'WooCommerce', 'PHP', 'Donation System', 'Event Ticketing', 'Facebook Integration'],
+    kpis: [{ v: 'WooCommerce', l: 'Tickets + donations' }, { v: 'Elementor', l: '4.x responsive' }, { v: 'Multi-audience', l: 'Tourist + local' }],
+    details: 'WooCommerce-powered event ticketing and donation processing, community news and Shabbat information section, tourist services pages for visiting Jewish travellers, project documentation for charitable initiatives, and Facebook community integration for ongoing outreach.',
+    lessons: 'Non-profit platforms with multiple user types benefit greatly from clear audience segmentation in navigation — tourists need different information than members or donors.'
+  },
+  packright: {
+    cat: 'E-commerce · Packaging & Moving Supplies',
+    title: 'Pack Right Now — Packing & Shipping Supplies',
+    url: 'https://packrightnow.com',
+    summary: 'US-based e-commerce store for packing, moving, and shipping materials — serving residential movers, product shippers, and storage customers with a utility-first experience.',
+    problem: 'Packaging supply stores often look industrial and unwelcoming. The brand mission required a clean, approachable design that made packing feel achievable and straightforward.',
+    stack: ['WordPress', 'Elementor', 'WooCommerce', 'GTM', 'Hostinger', 'Custom CSS', 'SEO'],
+    kpis: [{ v: 'GTM', l: 'Full funnel tracking' }, { v: '3', l: 'Audience segments' }, { v: 'Hostinger', l: 'US-optimised hosting' }],
+    details: 'Elementor-built WooCommerce store with GTM integration for full e-commerce funnel tracking. Mission-led brand messaging targeting three audience flows: home movers, product shippers, and storage customers. Hosted on Hostinger for fast US delivery with Google Site Verification and SEO metadata.',
+    lessons: 'Audience segmentation in homepage messaging — addressing three buyer types explicitly — reduces bounce rate and increases time on site for commodity e-commerce.'
+  },
+  printperfect: {
+    cat: 'E-commerce · Custom Print Products',
+    title: 'Print Perfect Shop — Custom Printed Cups',
+    url: 'https://printperfectshop.com',
+    summary: 'WooCommerce store for custom-printed disposable cups — foam, frost flex, PET, and stadium cups — for events, restaurants, and branded merchandise buyers.',
+    problem: 'Custom print product stores live or die by launch promotions. The site needed compelling offer messaging, a clean browsing experience, and a frictionless checkout for B2B volume buyers.',
+    stack: ['WooCommerce', 'WordPress', 'Slider Revolution', 'PHP', 'Custom CSS', 'Promotional Pricing'],
+    kpis: [{ v: '4', l: 'Cup categories' }, { v: 'Free shipping', l: 'All orders' }, { v: 'Launch promos', l: 'Up to 50% off' }],
+    details: 'Slider Revolution hero section with launch promotional messaging (20% off Frost Flex, 50% off Soft Plastic). Product catalogue across four categories, My Account order management, keyword-suggestion search, free standard shipping banner, and toll-free US phone support for B2B buyers.',
+    lessons: 'Launch promotions work best when they\'re category-specific — broad discounts train customers to wait, but category promotions drive discovery of new product lines.'
+  },
+  hightide: {
+    cat: 'E-commerce · Outdoor Rentals',
+    title: 'High Tide Kayak Rentals',
+    url: 'https://hightidekayakrentals.com',
+    summary: 'Kayak rental booking platform for a Vero Beach, FL outdoor recreation business — online booking for single, tandem, pedal, and fishing kayaks.',
+    problem: 'Local outdoor rental businesses need an online presence that converts walk-in traffic to pre-bookings, reducing on-site friction and enabling planning for tourist customers.',
+    stack: ['WordPress', 'WooCommerce', 'Slider Revolution', 'Custom CSS', 'Google Maps API'],
+    kpis: [{ v: '4', l: 'Kayak categories' }, { v: 'Online', l: 'Booking enabled' }, { v: 'Vero Beach', l: 'Local SEO' }],
+    details: 'WooCommerce product catalogue for four kayak rental SKUs and add-on equipment. Slider Revolution outdoor photography hero. Google Maps integration for location discovery. Facebook and Instagram social links. Mobile-responsive design for on-location visitor access.',
+    lessons: 'For local activity businesses, mobile UX is paramount — most customers are checking availability on their phones while already on vacation. Speed and clarity trump everything.'
+  },
+  arrowmid: {
+    cat: 'B2B Technology · Communication Solutions · Israel',
+    title: 'Arrowmid — Communication & Radio Solutions',
+    url: 'https://arrowmid.com',
+    summary: 'Israeli B2B provider of walkie-talkies, push-to-talk devices, and enterprise communication systems targeting security, military, and enterprise clients.',
+    problem: 'Communication technology B2B sites must project technical authority and reliability — especially for security and military clients who need to trust the supplier implicitly.',
+    stack: ['WordPress', 'WPML', 'Custom Theme', 'PHP', 'Hebrew RTL', 'B2B Web Design', 'SEO'],
+    kpis: [{ v: 'WPML', l: 'Hebrew + English' }, { v: 'B2B', l: 'Security & military' }, { v: 'Motorola', l: 'Vendor partner' }],
+    details: 'Full Hebrew RTL B2B platform with WPML supporting Hebrew and English. Product range presentation for walkie-talkies, PTT devices, and enterprise communication systems. Motorola vendor partnership pages, B2B lead qualification forms, and Hebrew SEO for Israeli communication solutions market.',
+    lessons: 'WPML is the gold standard for Hebrew/English bilingual sites — the bidirectional layout switching requires a framework that handles both directions cleanly at the template level.'
+  },
+  futurist: {
+    cat: 'Web3 · NFT & Digital Art Platform',
+    title: 'Futuristic Christ — Web3 Art Project',
+    url: 'https://futuristichrist.thearchitect.global',
+    summary: 'Web3 and digital art project exploring through AI-generated imagery and blockchain technology the forms Jesus might take in a modern world driven by data and decentralisation.',
+    problem: 'Web3 projects need immersive, high-impact presentation that builds community trust quickly — standard corporate WordPress templates would undermine the creative and technical ambition.',
+    stack: ['WordPress', 'Custom Theme', 'PHP', 'Web3 Integration', 'NFT Platform', 'CSS', 'Twitter Integration'],
+    kpis: [{ v: 'Web3', l: 'NFT platform' }, { v: 'AI art', l: 'Generated imagery' }, { v: 'Custom', l: 'Dark theme' }],
+    details: 'Custom WordPress theme with immersive dark aesthetic. Single-page anchor navigation for storytelling flow: About, Company Profile, Mission, Team, Project Gallery, FAQ. AI-generated artwork display, Twitter/X community integration as primary social channel, and mobile-responsive layout for Web3 audience.',
+    lessons: 'Web3 projects live on community trust — the website\'s visual quality signals whether the team has the design maturity to execute the broader vision.'
+  },
+  beahava: {
+    cat: 'Education & Wellness · Membership Platform · Israel',
+    title: 'BeAhava — Spiritual Awareness Centre',
+    url: 'https://beahava.co.il',
+    summary: 'Long-running Hebrew spiritual education and wellness platform offering meditation courses, mysticism studies, guided meditations, energy healing, and personal coaching since 2018.',
+    problem: 'Spiritual education platforms need to balance authority (instructor credibility, structured courses) with accessibility (free content, welcoming tone) to grow a long-term subscriber base.',
+    stack: ['WordPress', 'Custom Theme', 'PHP', 'Hebrew RTL', 'WP Download Manager', 'Membership Architecture', 'SEO'],
+    kpis: [{ v: '2018', l: 'Active since' }, { v: 'DLM', l: 'Digital content delivery' }, { v: 'Hebrew', l: 'RTL platform' }],
+    details: 'Custom WordPress theme with Hebrew RTL architecture active since 2018. Free guided meditation audio library via WP Download Manager, structured online course for spiritual awareness, personal energy healing booking flow, blog content for SEO authority, and newsletter integration for community retention.',
+    lessons: 'Offering free high-value content (guided meditations) as a top-of-funnel entry point is the most effective growth strategy for wellness education platforms.'
+  },
+  tra: {
+    cat: 'Local Services · Training Platform',
+    title: 'TRA Training — Trained Ready Armed',
+    url: 'https://tra-training.com',
+    summary: 'Illinois firearms training, CCL certification, and security services website — covering concealed carry licensing, safety courses, security guard training, and a gun store.',
+    problem: 'Firearms training sites must balance regulatory compliance, trust signals for certification, and e-commerce for product sales — all within a market with strict search advertising restrictions.',
+    stack: ['WordPress', 'WP Rocket', 'Elementor', 'WooCommerce', 'Local SEO', 'Custom CSS'],
+    kpis: [{ v: 'IL + FL + UT', l: 'CCL reciprocity' }, { v: 'WP Rocket', l: 'Performance optimised' }, { v: 'Local SEO', l: 'Illinois targeting' }],
+    details: 'WP Rocket performance-optimised site with Elementor layout. Illinois CCL training pages with Florida and Utah reciprocity information, security guard certification pages, firearms safety course listing, instructor credential display, class scheduling flow, WooCommerce gun store, and local Illinois SEO targeting.',
+    lessons: 'In regulated industries, presenting certifications and reciprocity information prominently converts searchers into enquiries faster than any other trust signal.'
+  },
+  provelocal: {
+    cat: 'SaaS · Travel Membership Platform',
+    title: 'ProveLocal — Online Travel Agency for Locals',
+    url: 'http://provelocal.com',
+    summary: 'Membership-based OTA for local residents offering exclusive hotel, resort, spa, restaurant, and parking discounts unavailable to tourists — launching in San Francisco and Honolulu.',
+    problem: 'A novel membership travel concept requires the website to do heavy educational lifting — explaining the value proposition, the verification mechanism, and the discount access model before converting.',
+    stack: ['WordPress', 'Elementor', 'WooCommerce', 'PHP', 'Custom Auth', 'Membership System', 'GTM'],
+    kpis: [{ v: '2', l: 'Launch cities' }, { v: 'Membership', l: 'Verification system' }, { v: 'WooCommerce', l: 'Subscription purchase' }],
+    details: 'Member registration and identity verification flow, user login dashboard with discount access, hotel and resort catalogue with rate display, city-specific sub-portals for San Francisco and Honolulu, partner hotel onboarding pages, WooCommerce membership product purchase, and conversion-focused Elementor landing pages.',
+    lessons: 'Novel product concepts require more educational content and social proof than established categories — a How It Works section that removes every possible objection is worth investing in heavily.'
+  },
+  bloom: {
+    cat: 'Local Business · Events & Booking',
+    title: 'Bloomwoodstock — Floral Arrangement Events',
+    url: 'http://bloomwoodstock.com',
+    summary: 'Social floral arranging studio offering guided arrangement events for individuals, couples, friends, book groups, and corporate teams — no experience required.',
+    problem: 'Experiential local businesses need to communicate the fun, accessible nature of the experience while making it easy for groups to book — friction in the booking flow directly kills group conversions.',
+    stack: ['WordPress', 'Event Calendar Plugin', 'Custom CSS', 'Booking System', 'PHP', 'Gallery Integration'],
+    kpis: [{ v: 'Group', l: 'Booking enabled' }, { v: 'Gallery', l: 'Inspiration photos' }, { v: 'Calendar', l: 'Class listings' }],
+    details: 'Event calendar with class listing, dates, and availability. Booking and registration flow for individual and group sign-ups. Audience segmentation messaging for singles, couples, friends, and corporate groups. Photo gallery showcasing arrangement results. Private event enquiry form.',
+    lessons: 'For experience businesses, photos of happy customers do more conversion work than any copy. The gallery section should be the most prominent social proof element.'
+  },
+  artique: {
+    cat: 'Local Business · Art Gallery & E-commerce',
+    title: 'Artique Putnam — Local Art Gallery',
+    url: 'http://artiqueputnam.com',
+    summary: 'Online gallery and e-commerce store for a local art gallery selling original paintings, blown glass, ceramics, and jewellery — positioning as a source for one-of-a-kind heirlooms.',
+    problem: 'Local art galleries lose sales because their physical inventory is invisible online. Building a digital gallery that captures the texture and quality of original work requires careful photography display design.',
+    stack: ['WordPress', 'WooCommerce', 'Custom CSS', 'PHP', 'Gallery Layout', 'Local SEO'],
+    kpis: [{ v: '4+', l: 'Art medium types' }, { v: 'Artist', l: 'Profile pages' }, { v: 'Local SEO', l: 'Putnam CT' }],
+    details: 'WooCommerce art catalogue with artist attribution, dimensions, and pricing. Artist profile pages with background and available works. Consignment and submission information for gallery partnerships. Category navigation by medium: paintings, ceramics, glass, jewellery. Mobile-responsive artwork discovery.',
+    lessons: 'For original art e-commerce, the product page layout is everything — large, high-quality images with accurate colour reproduction and visible dimensions directly drive purchase confidence.'
+  },
+  remotebalance: {
+    cat: 'SaaS · HR Wellness Tech',
+    title: 'My Remote Balance — Wellness for Remote Teams',
+    url: 'https://myremotebalance.com',
+    summary: 'Corporate mental health and wellness platform for remote teams — a psychologist-led service helping HR leaders and startup founders build emotionally healthy distributed workforces.',
+    problem: 'Remote wellness services are hard to sell because buyers (HR leaders) can\'t see or touch the product. The site needed to build trust through professional credibility and clear outcome framing.',
+    stack: ['WordPress', 'Custom Theme', 'CSS', 'Calendly Integration', 'Video Background', 'Content Strategy', 'SEO'],
+    kpis: [{ v: 'Calendly', l: 'Booking integrated' }, { v: 'Video hero', l: 'Emotional engagement' }, { v: 'Blog', l: 'SEO content hub' }],
+    details: 'Psychologist credential and service presentation, Calendly-integrated scheduling for free intro call bookings, video background hero for emotional engagement, how-it-works flow explaining the engagement model, blog content hub for remote work and mental health SEO authority, and low-friction lead capture form.',
+    lessons: 'For professional services in a sensitive domain, the founder\'s credentials and process transparency are more persuasive than any feature list — leading with the person builds trust faster than leading with the product.'
+  }
+};
+
+// ── MODAL LOGIC ──
+function openModal(key) {
+  const d = modalData[key];
+  if (!d) return;
+  document.getElementById('modalBody').innerHTML = `
+    <p class="modal-cat">${d.cat}</p>
+    <h2>${d.title}</h2>
+    <a class="modal-url" href="${d.url}" target="_blank">↗ ${d.url.replace('https://','').replace('http://','')}</a>
+    <div class="modal-kpis">
+      ${d.kpis.map(k => `<div class="kpi-box"><strong>${k.v}</strong><span>${k.l}</span></div>`).join('')}
+    </div>
+    <div class="modal-section">
+      <h4>Project Overview</h4>
+      <p>${d.summary}</p>
+    </div>
+    <div class="modal-section">
+      <h4>Problem Solved</h4>
+      <p>${d.problem}</p>
+    </div>
+    <div class="modal-section">
+      <h4>Tech Stack</h4>
+      <div class="modal-tech-stack">${d.stack.map(t => `<span class="modal-stack-tag">${t}</span>`).join('')}</div>
+    </div>
+    <div class="modal-section">
+      <h4>What Was Built</h4>
+      <p>${d.details}</p>
+    </div>
+    <div class="modal-section">
+      <h4>Key Lesson</h4>
+      <p>${d.lessons}</p>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnBg(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ── FORM SUBMIT ──
+function submitForm() {
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  if (!name || !email) {
+    showToast('Please fill in your name and email.', false);
+    return;
+  }
+  showToast('Message sent! I\'ll reply within 24 hours.', true);
+  ['cName','cEmail','cType','cBudget','cMsg'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+}
+
+function showToast(msg, success) {
+  const t = document.getElementById('toast');
+  const icon = t.querySelector('.toast-icon');
+  document.getElementById('toastMsg').textContent = msg;
+  icon.textContent = success ? '✓' : '!';
+  icon.style.color = success ? 'var(--green)' : 'var(--coral)';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+// ── NAV SCROLL EFFECT ──
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.borderBottomColor = window.scrollY > 40 ? 'var(--border2)' : 'var(--border)';
+});
+</script>
+</body>
+</html>
