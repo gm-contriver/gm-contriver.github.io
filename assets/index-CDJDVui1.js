@@ -135,7 +135,7 @@ Error generating stack: `+e.message+`
           uppercase tracking-widest-plus
           text-[clamp(0.7rem,1vw,0.9rem)]
           mb-8 sm:mb-10 md:mb-12
-        `,children:[wd.length,` live projects shipped`]})}),(0,U.jsx)(`div`,{className:`flex flex-col`,children:wd.map((e,n)=>(0,U.jsx)(Cd,{project:e,index:n,totalCards:wd.length,containerProgress:t},e.num))})]})}var Ed=[`Laravel`,`PHP 8`,`Vue.js`,`WordPress`,`WooCommerce`,`OpenAI API`,`MySQL`,`Docker`,`Linux`,`Nginx`,`Cloudflare`,`REST API`,`WPML`,`Git`,`Redis`];function Dd(){return(0,U.jsxs)(`section`,{id:`contact`,className:`
+        `,children:[wd.length,` live projects shipped`]})}),(0,U.jsx)(`div`,{className:`flex flex-col`,children:wd.map((e,n)=>(0,U.jsx)(Cd,{project:e,index:n,totalCards:wd.length,containerProgress:t},e.num))})]})}var Ed=[`Laravel`,`Django`,`PHP`,`Python`,`JavaScript`,`Vue.js`,`WordPress`,`WooCommerce`,`OpenAI API`,`MySQL`,`Docker`,`Linux`,`Nginx`,`Cloudflare`,`REST API`,`WPML`,`Git`,`Redis`];function Dd(){return(0,U.jsxs)(`section`,{id:`contact`,className:`
         bg-brand-dark
         flex flex-col items-center text-center
         gap-8 md:gap-10
@@ -144,7 +144,7 @@ Error generating stack: `+e.message+`
       `,children:[(0,U.jsx)(td,{delay:0,y:40,children:(0,U.jsx)(`h2`,{className:`hero-heading font-black uppercase tracking-tight-plus text-fluid-h2 leading-none`,children:`Let's Build`})}),(0,U.jsx)(td,{delay:.2,y:20,children:(0,U.jsx)(`p`,{className:`
           text-brand-light/60 font-light leading-relaxed
           text-fluid-base max-w-contact-text
-        `,children:`Full-stack developer with 10+ years of experience building scalable web applications — Laravel, WordPress, Vue.js, AI integrations, and REST APIs. Let's create something remarkable together.`})}),(0,U.jsx)(td,{delay:.35,y:20,children:(0,U.jsx)(id,{})}),(0,U.jsx)(td,{delay:.45,y:20,children:(0,U.jsx)(`div`,{className:`flex flex-wrap gap-2 justify-center max-w-skills`,children:Ed.map(e=>(0,U.jsx)(`span`,{className:`
+        `,children:`Full-stack developer with 10+ years of experience building scalable web applications, Laravel, Django, WordPress, Vue.js, AI integrations, and REST APIs. Let's create something remarkable together.`})}),(0,U.jsx)(td,{delay:.35,y:20,children:(0,U.jsx)(id,{})}),(0,U.jsx)(td,{delay:.45,y:20,children:(0,U.jsx)(`div`,{className:`flex flex-wrap gap-2 justify-center max-w-skills`,children:Ed.map(e=>(0,U.jsx)(`span`,{className:`
                 text-brand-light/50 font-light uppercase
                 tracking-wide border border-brand-light/[0.18]
                 rounded-full px-3 py-1
