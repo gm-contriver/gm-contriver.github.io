@@ -135,7 +135,7 @@ Error generating stack: `+e.message+`
           uppercase tracking-widest-plus
           text-[clamp(0.7rem,1vw,0.9rem)]
           mb-8 sm:mb-10 md:mb-12
-        `,children:[wd.length,` live projects shipped`]})}),(0,U.jsx)(`div`,{className:`flex flex-col`,children:wd.map((e,n)=>(0,U.jsx)(Cd,{project:e,index:n,totalCards:wd.length,containerProgress:t},e.num))})]})}var Ed=[`Laravel`,`Django`,`PHP`,`Python`,`JavaScript`,`Vue.js`,`WordPress`,`WooCommerce`,`OpenAI API`,`MySQL`,`Docker`,`Linux`,`Nginx`,`Cloudflare`,`REST API`,`WPML`,`Git`,`Redis`];function Dd(){return(0,U.jsxs)(`section`,{id:`contact`,className:`
+        `,children:[wd.length,` live projects shipped`]})}),(0,U.jsx)(`div`,{className:`flex flex-col`,children:wd.map((e,n)=>(0,U.jsx)(Cd,{project:e,index:n,totalCards:wd.length,containerProgress:t},e.num))})]})}var Ed=[`Laravel`,`Django`,`PHP`,`Python`,`JavaScript`,`Vue.js`,`WordPress`,`WooCommerce`,`AI-Integration`,`OpenAI API`,`MySQL`,`Tailwindcss`,`Bootstrap`,`Docker`,`Linux`,`Nginx`,`Cloudflare`,`REST API`,`WPML`,`Git`,`Redis`,`Jira`,`Trello`];function Dd(){return(0,U.jsxs)(`section`,{id:`contact`,className:`
         bg-brand-dark
         flex flex-col items-center text-center
         gap-8 md:gap-10
